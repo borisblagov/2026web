@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Boris Blagov</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-48eea8e06ff06eb442a2daacfce5ac08.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./resources/logo.png" alt="Website logo" class="navbar-logo light-content">
+    <img src="./resources/logo.png" alt="Website logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Boris Blagov</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#featured-post" id="toc-featured-post" class="nav-link active" data-scroll-target="#featured-post">Featured Post</a>
+  <ul class="collapse">
+  <li><a href="#a-new-site-with-quatro" id="toc-a-new-site-with-quatro" class="nav-link" data-scroll-target="#a-new-site-with-quatro">A new site with Quatro</a></li>
+  </ul></li>
+  <li><a href="#current-research" id="toc-current-research" class="nav-link" data-scroll-target="#current-research">Current research</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
+  <li><a href="#working-papers" id="toc-working-papers" class="nav-link" data-scroll-target="#working-papers">Working Papers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+
+
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+    <img src="resources/photo.jpg" alt="Boris Blagov" class="about-image
+  rounded " style="width: 20em;">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Boris Blagov</h1>
+</div>
+<div class="quarto-title-meta">
+  </div>
+</header>
+    <div class="about-links">
+  <a href="mailto:boris.blagov@rwi-essen.de" class="about-link" rel="" target="">
+    <i class="bi bi-envelope-at"></i>
+     <span class="about-link-text">Email</span>
+  </a>
+  <a href="https://github.com/borisblagov" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+  <a href="https://scholar.google.de/citations?hl=en&amp;user=p1biOaIAAAAJ" class="about-link" rel="" target="">
+    <i class="bi bi-mortarboard"></i>
+     <span class="about-link-text">Google Scholar</span>
+  </a>
+  <a href="https://www.linkedin.com/in/borisblagov/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://orcid.org/0000-0002-2184-0717" class="about-link" rel="" target="">
+    <i class="bi bi-person-badge"></i>
+     <span class="about-link-text">ORCID</span>
+  </a>
+</div>
+  </div>
+  <div class="about-contents"><div id="bio">
+<p>I am an economist and a professional forecaster for <a href="http://en.rwi-essen.de/">RWI – Leibniz Institute of Economic Research</a> in Essen, Germany at the division <a href="http://en.rwi-essen.de/forschung-und-beratung/wachstum-konjunktur-oeffentliche-finanzen/">Macroeconomics and Public Finance</a>.</p>
+<p>I am part of the junior faculty of the <a href="http://rgs-econ.org/">Ruhr Graduate School of Economics</a> and a research fellow of <a href="https://docma.tu-dortmund.de/team/research-fellows/">DocMA</a> - an interdisciplinary research project in which algorithms process huge amounts of newspaper articles and texts of social media in order to recognize patterns.</p>
+<p>On this page you will find my <a href="./#papers">research</a>, <a href="./#forecasts">forecasts</a>, <a href="./#publications">replication codes</a>, and previous <a href="#teaching">teaching materials</a>.</p>
+</div></div>
+</div>
+
+<section id="featured-post" class="level2">
+<h2 data-anchor-id="featured-post">Featured Post</h2>
+<section id="a-new-site-with-quatro" class="level3">
+<h3 data-anchor-id="a-new-site-with-quatro"><a href="posts/2026_11_13_new_site/">A new site with Quatro</a></h3>
+<p>November 13, 2025 · A transition away from hugo academic/wowchemy/hugoblox</p>
+<p>Read about the move to Quarto and the reasons for choosing a more maintainable setup for the site.</p>
+</section>
+</section>
+<section id="current-research" class="level2">
+<h2 data-anchor-id="current-research">Current research</h2>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><span class="title-bold">Does it add up? Reconciling forecasts and Impulse responses for hierarchical macroeconomic data</span><br><span class="authors-normal">Boris Blagov and Clara Krause</span><br><span class="journal-italic">Working Paper - Ruhr Economic Papers No.&nbsp;1224</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.rwi-essen.de/fileadmin/user_upload/RWI/Publikationen/Ruhr_Economic_Papers/REP_26_1224.pdf">[PDF]</a> <a href="https://borisblagov.com/publication/2026_bc/cite.bib">[Citation]</a> <a href="https://doi.org/10.4419/96973409">[DOI]</a></p>
+This paper introduces a mixed-frequency Gaussian state-space Framework that embeds forecast reconciliation into Bayesian VAR modeling for hierarchical macroeconomic data. Using precision-based sampling to generate high-frequency latent estimates, we construct a consistent proxy for the forecast-error covariance matrix, enabling optimal reconciliation with short datasets. We prove the asymptotic convergence of this estimator and show that forecast reconciliation can be formally derived as a special case of conditional forecasting, allowing straightforward implementation with Standard state-space algorithms. We derive reconciled impulse response functions (rIRFs) that ensure bottom-level structural responses aggregate exactly to the top-level impulse response. Applying the framework to UK and German regional economic data, we demonstrate improvements in the forecast accuracy alongside structurally consistent impulse responses.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span><span class="title-bold">Measuring political instability at a high frequency </span><br><span class="authors-normal">Niklas Benner, Boris Blagov and Maximillian Dirks</span><br><span class="journal-italic">Working Paper - Ruhr Economic Papers No.&nbsp;1186</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.econstor.eu/bitstream/10419/338082/1/196382007X.pdf">[PDF]</a> <a href="https://borisblagov.com/publication/2026_bc/cite.bib">[Citation]</a> <a href="https://doi.org/10.4419/96973371">[DOI]</a></p>
+This study introduces the World Index of Political Instability (WIPI), a novel high-frequency measure that covers four dimensions of political instability in 182 countries, available from 1960 until 2024. Our measure is extracted from the curated texts of the Economist Intelligence Unit’s Country Reports using text mining techniques, allowing us to track political instability on a high frequency while matching various established low-frequency proxies. We show that political instability has significant and negative short-run effects on the economy similar to a demand-side shock. In contrast to uncertainty shocks, the observed effects are not immediate but take up to one year until they materialize. The measured effects are stronger in low-income economies than in high-income economies and during recessionary periods.
+<p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="publications" class="level2">
+<h2 data-anchor-id="publications">Publications</h2>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Improving inference and forecasting in VAR models using cross-sectional information</span><br><span class="authors-normal">Boris Blagov and Jan Prüser</span><br><span class="journal-italic">Economic Modelling</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.sciencedirect.com/science/article/pii/S0264999326001471/pdfft?md5=a9e0c645ea30f74fbe46b217b5a2c2fb&amp;pid=1-s2.0-S0264999326001471-main.pdf">[PDF]</a> <a href="https://borisblagov.com/publication/2026_pb/cite.bib">[Citation]</a> <a href="https://borisblagov.com/publication/2022_rep_pvar/Prueser_Blagov_2022_poolingVAR_Slides.pdf">[Slides]</a> <a href="https://github.com/borisblagov/Blagov_Prueser_2026_Replication">[Code]</a> <a href="https://doi.org/10.1016/j.econmod.2026.107618">[DOI]</a></p>
+We propose a prior for VAR models that exploits the panel structure of macroeconomic time series while also providing shrinkage towards zero to address overfitting concerns. The prior is flexible as it detects shared dynamics of individual variables across endogenously determined groups of countries. We demonstrate the usefulness of our approach in three applications. In the first, using a euro area dataset, we demonstrate that combining pairwise pooling with zero shrinkage helps with structural analysis by lowering the estimation uncertainty. In the second application, we use artificial data to study the bias-variance trade-off between pooling, zero shrinkage and no regularization. If the countries are similar, pooling leads only to a small bias but still provides a large reduction in the estimation variance. Finally, we use a real dataset of a large group of heterogeneous countries to demonstrate that combining pairwise pooling with zero shrinkage can improve out-of-sample forecasting relative to only zero shrinkage or only pooling specifications.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Economic Knock-On Effects of Russia’s Geopolitical Risk on Advanced Economies: A Global VAR Approach</span><br><span class="authors-normal">Boris Blagov, Maximilian Dirks, and Michael Funke</span><br><span class="journal-italic">Macroeconomic Dynamics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.cambridge.org/core/journals/macroeconomic-dynamics/article/economic-knockon-effects-of-russias-geopolitical-risk-on-advanced-economies-a-bayesian-global-var-approach/A636B2EFC867E319D7A12821838BE374">[Journal version]</a> <a href="https://www.econstor.eu/bitstream/10419/282988/1/1880241064.pdf">[Working paper]</a> <a href="https://borisblagov.com/publication/2025_bfd/cite.bib">[Citation]</a> <a href="https://doi.org/10.1017/S1365100525100552">[DOI]</a></p>
+Using a Bayesian Global VAR model as a methodological tool, we analyze how heightened geopolitical risk shocks propagate across advanced economies and quantify the economic effects of these events. The global VAR impulse response functions in response to the skyrocketing Russian geopolitical risk after Russia’s invasion of Ukraine revealed a contraction of GDP and an increase in inflation. Eastern European and Baltic countries are particularly affected by the Russian geopolitical risk shock. We also document a strong component of the Russian geopolitical risk shock that is not driven by fossil fuel prices.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">The macroeconomic impact of asymmetric uncertainty shocks</span><br><span class="authors-normal">Henrik Müller, Boris Blagov, Torsten Schmidt, Jonas Rieger and Carsten Jentsch</span><br><span class="journal-italic">The Journal of Economic Asymmetries</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.sciencedirect.com/science/article/pii/S1703494925000106">[Journal version]</a> <a href="https://doi.org/10.1016/j.jeca.2025.e00410">[DOI]</a></p>
+Political shocks impact the economy in different ways, depending of their nature. To capture these effects effectively, we present the Uncertainty Perception Indicator (UPI) based on German newspaper content. This approach combines the time-inherent stability of simple counts of articles with the thematic openness and flexibility of topic models. Using the dynamic RollingLDA technique facilitates the close-to-real-time identification of both the magnitude of an uncertainty shock and its specific characteristics. Hence, the UPI could prove highly useful for economic forecasters and policymakers, since it renders possible more timely and targeted policy reactions. Employing a Bayesian VAR approach, we analyze the effects of various UPI shocks on fixed investment and other macroeconomic variables. Our results document the asymmetric nature of uncertainty shocks, as their consequences are dependent on the respective sources of uncertainty. We find that international shocks only have weak effects on the German macroeconomy, while domestic policy shocks prove to be highly significant. These results markedly differ from earlier studies that, in the case of Germany, tend to maintain the opposite.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Monetary policy uncertainty and inflation expectations</span><br><span class="authors-normal">Gabriel Arce-Alfaro and Boris Blagov</span><br><span class="journal-italic">Oxford Bulletin of Economics and Statistics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://onlinelibrary.wiley.com/doi/10.1111/obes.12516">[Journal version]</a> <a href="https://www.econstor.eu/bitstream/10419/232074/1/1752335252.pdf">[Working paper]</a> <a href="https://borisblagov.com/publication/2023_ab/cite.bib">[Citation]</a> <a href="https://doi.org/10.1111/obes.12516">[DOI]</a></p>
+Do inflation expectations react to changes in the volatility of monetary policy? They have, but only until the global financial crisis. This paper investigates whether increasing the dispersion of monetary policy shocks, which is interpreted as elevated uncertainty surrounding monetary policy, affects the inflation expectation formation process. Based on U.S. data since the 1980s and a stochastic volatility-in-mean structural VAR model we find that monetary policy uncertainty reduces both inflation expectations and inflation. However, after the Great Recession this link has disappeared, even when controlling for the Zero Lower Bound.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Financial integration or financial fragmentation? A euro area perspective</span><br><span class="authors-normal">Gabriel Arce-Alfaro and Boris Blagov</span><br><span class="journal-italic">Economic Modelling</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.econstor.eu/bitstream/10419/249306/1/178662611X.pdf">[Preprint]</a> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0264999322001481">[PDF]</a> <a href="https://borisblagov.com/publication/2022_em/cite.bib">[Citation]</a> <a href="https://borisblagov.com/publication/2022_em/Arce_Alfaro_Blagov_2022_EconomicModelling_Dataset.xlsx">[Dataset]</a> <a href="https://borisblagov.com/publication/2022_em/Arce_Alfaro_Blagov_2022_Heterogeneity_co-movements_and_financial_fragmentation_within_the_euro_area_Slides.pdf">[Slides]</a></p>
+In this article we address the question of how strongly bank lending rates and credit volumes co-move across the euro area. Following the breakdown in the interest rate pass-through across the euro area, we aim to disentangle the relative importance of country-specific and common components in explaining the variance of the macro and financial variables by using a time-varying two-level dynamic factor model. Our results show that a high share is explained by the common component. However, we find a persistent decline in the importance of the common factor in the bank lending rates, indicating the presence of financial fragmentation. Furthermore, we find persistent heterogeneity across member states, specifically those hit hard by the sovereign-debt crisis.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">The regime-dependent evolution of credibility: a fresh look at Hong Kong’s linked exchange rate system</span><br><span class="authors-normal">Boris Blagov and Michael Funke</span><br><span class="journal-italic">Macroeconomic Dynamics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.cambridge.org/core/journals/macroeconomic-dynamics/article/regimedependent-evolution-of-credibility-a-fresh-look-at-hong-kongs-linked-exchange-rate-system/F48B76D16030A5731E7C44E873CF0105">[PDF]</a> <a href="https://borisblagov.com/publication/2019_md/cite.bib">[Citation]</a> <a href="https://doi.org/10.1017/S136510051700075X">[DOI]</a></p>
+An estimated Markov-switching DSGE modeling framework that allows for parameter shifts across regimes is employed to test the hypothesis of regime-dependent credibility of Hong Kong’s linked exchange rate system. The baseline model distinguishes two regimes with respect to the time-series properties of the risk premium. Regime-dependent impulse responses to macroeconomic shocks reveal substantial differences in spreads. To test the sensitivity of the results, a number of robustness checks are performed. The findings contribute to efforts at modeling exchange rate regime credibility as a nonlinear process with two distinct regimes.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Exchange rate uncertainty and import prices in the euro area</span><br><span class="authors-normal">Boris Blagov</span><br><span class="journal-italic">Review of International Economics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/roie.12434">[Journal version]</a> <a href="https://borisblagov.com/publication/2019_eru/cite.bib">[Citation]</a> <a href="https://www.dropbox.com/s/q7qbi8hpolv94jm/Paper_ERU_Poster.pdf?dl=0">[Poster]</a> <a href="https://doi.org/10.1111/roie.12434">[DOI]</a></p>
+This paper analyses the effects of exchange rate uncertainty on the pricing behaviour of import firms in the euro area. Uncertainty is measured via the volatility of the structural shocks to the exchange rate in a non-linear VAR framework and is an important determinant of import prices. An increase in exchange rate uncertainty is associated with a fall in prices on average, which suggests that the exchange rate risk is borne by the importers. The analysis utilizes a dataset on industrial import prices, disaggregated by origin of imports. Controlling for intra- and extra-euro area trade is important.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">Financial crises and time-varying risk premia in a small open economy: a Markov-switching DSGE model for Estonia</span><br><span class="authors-normal">Boris Blagov</span><br><span class="journal-italic">Empirical Economics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.springerprofessional.de/en/financial-crises-and-time-varying-risk-premia-in-a-small-open-ec/12210778">[Journal version]</a> <a href="https://borisblagov.com/publication/2018_ee/cite.bib">[Citation]</a> <a href="https://borisblagov.com/publication/2018_ee/Blagov_2018_Empirical_Economics.7z">[Code]</a> <a href="https://doi.org/10.1007/s00181-017-1256-z">[DOI]</a></p>
+Under a currency board, the central bank relinquishes control over its monetary policy and domestic interest rates converge towards the foreign rates. Nevertheless, a spread between both usually remains. This spread can be persistently positive due to elevated risk in the economy. This paper models that feature by building a DSGE model with a currency board, where the domestic interest rate is endogenously derived as a function of the foreign rate, the external debt position and an exogenous risk premium component. Time variation in the volatility of the risk premium component is then modelled via a Markov-switching component. Estimating the model with Bayesian methods and Estonian data shows that the economy does not react much to shocks to domestic interest rates in quiet times but is much more sensitive during crises, and matches the financial and banking crises, which cannot be captured by the standard DSGE model.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><span class="title-bold">The credibility of Hong Kong’s currency board system: looking through the prism of MS-VAR models with time-varying transition probabilities</span><br><span class="authors-normal">Boris Blagov and Michael Funke</span><br><span class="journal-italic">Oxford Bulletin of Economics and Statistics</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://onlinelibrary.wiley.com/doi/10.1111/obes.12148">[PDF]</a> <a href="https://borisblagov.com/publication/2016_ob/cite.bib">[Citation]</a> <a href="https://doi.org/10.1111/obes.12148">[DOI]</a></p>
+This paper employs a Markov regime-switching VAR model to describe and analyse the time-varying credibility of Hong Kong’s currency board system. The endogenously estimated discrete regime shifts are made dependent on macroeconomic fundamentals. This enables us to determine which changes in macroeconomic variables can trigger switches between the low and high credibility regimes. We carry out extensive testing to search for the most appropriate specification of the Markov regime-switching model. We find strong evidence of regime switching behaviour that portrays the time-varying nature of credibility in the historical data.
+<p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="working-papers" class="level2">
+<h2 data-anchor-id="working-papers">Working Papers</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><span class="title-bold">The Tweet is Mightier than the Pen - Social Media Posts, Executive Orders, and Uncertainty</span><br><span class="authors-normal">Boris Blagov</span><br><span class="journal-italic">SSRN working paper</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5225363">[Working paper]</a></p>
+We quantify the effects of US trade policy uncertainty (TPU) on its major European partners, calibrating the TPU shock to the observed jump in Q1 2025. We contrast these estimates with a tariff hike in an international general equilibrium model with production networks and find that for the European trading partners, the uncertainty is quantitatively more important than tariffs, which could be dampened by substitution and reallocation effects.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><span class="title-bold">The investment narrative: Improving private investment forecasts with media data</span><br><span class="authors-normal">Boris Blagov, Henrik Müller, Carsten Jentsch, and Torsten Schmidt</span><br><span class="journal-italic">Working Paper - Ruhr Economic Papers No.&nbsp;921</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.econstor.eu/bitstream/10419/242123/1/1770069119.pdf">[Working paper PDF]</a> <a href="https://borisblagov.com/publication/2021_rep_narratives/cite.bib">[Citation]</a> <a href="https://doi.org/10.4419/96973067">[DOI]</a></p>
+Corporate investment in Germany has been relatively weak for a prolonged period after the financial crisis. This was remarkable given that interest rates and overall economic activity, important determinants of corporate investment, developed quite favourably during that time. These developments highlight the fact that the dynamics of business cycles varies over time each cycle is somewhat different. A promising new line of research to identify the driving factors of business cycles is the use of narratives (Shiller 2017, 2020). Widely shared stories capture expectations and beliefs about the workings of the economy that may influence economic behavior, such as investment decisions. In this paper, we use Latent Dirichlet Allocation (LDA) to identify topics from news (text) data related to corporate investment in Germany and to construct suitable indicators. Furthermore, we focus on isolating those investment narratives that show the potential to lead to substantial improvement of the forecasting performance of econometric models. In our analysis, we demonstrate the benefit of using media-based indicators to improve econometric forecasts of business equipment investment. Newspaper data carries important information both on the future developments of investment (forecasting) as well as on current developments (nowcasting). Moreover, the identified investment narrative enables the researcher to improve her/his understanding of the investment process in general and allows to incorporate exogenous developments as well as economic sentiment, news and other relevant events to the analysis.
+<p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><span class="title-bold">Modelling the time-variation in euro area lending spreads</span><br><span class="authors-normal">Boris Blagov, Michael Funke, and Richhild Moessner</span><br><span class="journal-italic">Working Paper - BIS Working Papers No.&nbsp;526</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>
+</p><p><a href="https://www.bis.org/publ/work526.pdf">[PDF]</a> <a href="https://borisblagov.com/publication/2015_bis/cite.bib">[Citation]</a></p>
+Using a Markov-switching VAR with endogenous transition probabilities, we analyse what has triggered the interest rate pass-through impairment for Italy, Ireland, Spain and Portugal. We find that global risk factors have contributed to higher lending rates in Italy and Spain, problems in the banking sector help to explain the impairment in Spain, and fiscal problems and contagion effects have contributed in Italy and Ireland. We also find that the ECB’s unconventional monetary policy announcements have had temporary positive effects in Italy. Due to the zero lower bound these findings are amplified if EONIA is used as a measure of the policy rate. We did not detect changes in the monetary policy transmission for Portugal.
+<p></p>
+</div>
+</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
