@@ -32,7 +32,7 @@
     "href": "index.html#featured-post",
     "title": "Boris Blagov",
     "section": "Featured Post",
-    "text": "Featured Post\n\nA new site with Quatro\nNovember 13, 2025 · A transition away from hugo academic/wowchemy/hugoblox\nRead about the move to Quarto and the reasons for choosing a more maintainable setup for the site."
+    "text": "Featured Post\n\nA new site with Quatro\nNovember 13, 2026 · A transition away from hugo academic/wowchemy/hugoblox\nRead about the move to Quarto and the reasons for choosing a more maintainable setup for the site."
   },
   {
     "objectID": "index.html#current-research",
@@ -60,7 +60,7 @@
     "href": "posts/2026_05_12_ip_nrw/index.html",
     "title": "Historical time series for industrial production in the state of North Rhine-Westphalia",
     "section": "",
-    "text": "NRW industrial production long time-series\nThe data office IT.NRW does not publish a long time series for industrial production for NRW. See here at the Landesdatenbank IT.NRW\nThey offer the index for a period of maximum 7 years and 2 months: - ip05: From 2005 to 2013 with base year 2005, unadjusted and calendar adjusted (code 42153-10i) - ip10: From 2010 to 2018 with base year 2010, unadjusted and calendar adjusted (code 42153-07i) - ip15: From 2015 to 2023 with base year 2015, unadjusted, calendar adjusted, and seasonally and calendar adjusted. Note that the website says only seasonally adjusted! (code 42153-04i) - ip21: From 2021 to 2026 with base year 2015, unadjusted, calendar adjusted, and seasonally and calendar adjusted. Note that the website says only seasonally adjusted! (code 42153-01i)\nThere also exists an index with a base year 2000 (from 2000 to 2008), but that index is based on the 2003 system of national accounts (WZ 2003, not WZ 2008 as the rest). Therefore here we do not extend the index prior to 2005.\nFor working with econometric models, however, it is advantegous to have longer historical data. Here, I am presenting an index that is available monthly from 2005 and is currently up to the 2026 February vintage and am detailing how this index is constructed."
+    "text": "The data office IT.NRW does not publish a long time series for industrial production for NRW. See here at the Landesdatenbank IT.NRW\nThey offer the index for a period of maximum 7 years and 2 months: - ip05: From 2005 to 2013 with base year 2005, unadjusted and calendar adjusted (code 42153-10i) - ip10: From 2010 to 2018 with base year 2010, unadjusted and calendar adjusted (code 42153-07i) - ip15: From 2015 to 2023 with base year 2015, unadjusted, calendar adjusted, and seasonally and calendar adjusted. Note that the website says only seasonally adjusted! (code 42153-04i) - ip21: From 2021 to 2026 with base year 2015, unadjusted, calendar adjusted, and seasonally and calendar adjusted. Note that the website says only seasonally adjusted! (code 42153-01i)\nThere also exists an index with a base year 2000 (from 2000 to 2008), but that index is based on the 2003 system of national accounts (WZ 2003, not WZ 2008 as the rest). Therefore here we do not extend the index prior to 2005.\nFor working with econometric models, however, it is advantegous to have longer historical data. Here, I am presenting an index that is available monthly from 2005 and is currently up to the 2026 February vintage and am detailing how this index is constructed."
   },
   {
     "objectID": "posts/2026_05_12_ip_nrw/index.html#weight-adjustment",
@@ -102,6 +102,6 @@
     "href": "posts/2026_05_12_ip_nrw/index.html#download",
     "title": "Historical time series for industrial production in the state of North Rhine-Westphalia",
     "section": "Download",
-    "text": "Download\nYou can download the monthly Industrial Production NRW series (are available in Excel format here. You can also see how they are caclulated in more detail. If you are interested in other details, do get in touch via email."
+    "text": "Download\nYou can download the monthly Industrial Production NRW series are available in Excel format here. You can also see how they are caclulated in more detail. If you are interested in other details, do get in touch via email."
   }
 ]
