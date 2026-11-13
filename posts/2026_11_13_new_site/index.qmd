@@ -1,0 +1,19 @@
+---
+title: "A new site with Quatro"
+description: "A transition away from hugo academic/wowchemy/hugoblox"
+draft: false
+author: "Boris Blagov"
+date: "2025-11-13"
+categories: [Blogging]
+tags: [website]
+image: "image.png"
+image-alt: "Launching the new webpage"
+---
+
+A few years ago I visited an academic website with a wonderful design. It was built with hugo and with the "academic" theme of [George Cushen](https://neuralgeo.com/). Shortly after I switched to that design and this was my website for the past at least five years.
+
+However, maintaining the website over time became extremely time consuming. As a researcher you update your website maybe every six, nine, or even twelve months. Every update in the beginning needed a new hugo version. Then, at some point the academic theme became wowchemy and had a list of breaking changes, which needed to be implementet incrementally for all new versions of hugo backwards. Then, the template became hugo blox and it was rewritten, meaning that some older styles were missing as they had to yet be implemented.
+
+This sent me on a quest to find something more reliable and I have found Quatro. We will see how this goes, but there are some really nice websites around. This one draws its main inspiration from Vadim Elenev's [website](https://www.vadimelenev.com/), who also ahd his template on his github. 
+
+What I really like of Quatro is that you can combine it with source code, e.g. `Julia` in my case, which has great Package Manager, so I hope, that if I have to update something later, I can just load the same packages that I loaded today. 

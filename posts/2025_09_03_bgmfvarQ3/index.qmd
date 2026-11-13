@@ -1,0 +1,156 @@
+---
+title: "Bulgarian GDP nowcast 2025 Q3"
+description: "Monthly estimates for Bulgarian GDP from a mixed-frequency VAR nowcast for 2025 Q3."
+draft: false
+author: "Boris Blagov"
+date: "2025-09-03"
+categories: [Nowcasts]
+tags: [MF-VAR]
+image: "image.png"
+image-alt: "GDP nowcast"
+---
+
+```{julia}
+#| echo: false
+#| output: asis
+using Dates
+
+csv_path = joinpath(@__DIR__, "../../data", "20250911_bgmfvar.csv")
+csv_rows = readlines(csv_path)
+csv_header = split(first(csv_rows), ';')
+data_rows = split.(csv_rows[2:end], ';')
+
+dates = Date.(getindex.(data_rows, 1), Ref(dateformat"dd/mm/yyyy"))
+series = [
+		parse.(Float64, replace.(getindex.(data_rows, column), "," => "."))
+		for column in 2:length(csv_header)
+]
+
+js_dates = "[" * join(("\"" * Dates.format(date, dateformat"yyyy-mm-dd") * "\"" for date in dates), ",") * "]"
+js_values = ["[" * join(string.(values), ",") * "]" for values in series]
+
+print("""
+<div id="gdp-forecast-chart" role="img" aria-label="Interactive line chart of Bulgarian GDP median forecasts and 68% and 95% forecast intervals"></div>
+<div class="btn-group btn-group-sm mb-3" role="group" aria-label="Chart frequency">
+<button type="button" class="btn btn-outline-secondary active" data-frequency="monthly" aria-pressed="true">Monthly</button>
+<button type="button" class="btn btn-outline-secondary" data-frequency="quarterly" aria-pressed="false">Quarterly</button>
+</div>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+const forecastDates = $js_dates;
+const forecastSeries = [$(join(js_values, ","))];
+
+function makeChartData(dates, values) {
+	return [
+		{
+			x: dates, y: values[0], type: 'scatter', mode: 'lines',
+			line: {width: 0}, hoverinfo: 'skip', showlegend: false
+		},
+		{
+			x: dates, y: values[4], type: 'scatter', mode: 'lines',
+			line: {width: 0}, fill: 'tonexty', fillcolor: 'rgba(36, 112, 121, 0.13)',
+			name: '95% interval', hovertemplate: '95% interval: %{y:.3f}<extra></extra>'
+		},
+		{
+			x: dates, y: values[1], type: 'scatter', mode: 'lines',
+			line: {width: 0}, hoverinfo: 'skip', showlegend: false
+		},
+		{
+			x: dates, y: values[3], type: 'scatter', mode: 'lines',
+			line: {width: 0}, fill: 'tonexty', fillcolor: 'rgba(36, 112, 121, 0.25)',
+			name: '68% interval', hovertemplate: '68% interval: %{y:.3f}<extra></extra>'
+		},
+		{
+			x: dates, y: values[2], type: 'scatter', mode: 'lines',
+			line: {color: '#1e85e6', width: 2.5}, name: 'Median',
+			hovertemplate: 'Median: %{y:.3f}<extra></extra>'
+		}
+	];
+}
+
+function quarterlyAverage(dates, series) {
+	const quarterGroups = new Map();
+
+	for (let index = 0; index < dates.length; index += 1) {
+		const date = new Date(dates[index] + 'T00:00:00Z');
+		const quarter = Math.floor(date.getUTCMonth() / 3);
+		const key = date.getUTCFullYear() + '-' + quarter;
+		if (!quarterGroups.has(key)) {
+			quarterGroups.set(key, {year: date.getUTCFullYear(), quarter, indexes: []});
+		}
+		quarterGroups.get(key).indexes.push(index);
+	}
+
+	const groups = [...quarterGroups.values()];
+	const quarterlyDates = groups.map(({year, quarter}) =>
+		new Date(Date.UTC(year, (quarter + 1) * 3, 0)).toISOString().slice(0, 10)
+	);
+	const quarterlySeries = series.map(values => groups.map(({indexes}) =>
+		indexes.reduce((sum, index) => sum + values[index], 0) / indexes.length
+	));
+
+	return {dates: quarterlyDates, series: quarterlySeries};
+}
+
+const quarterlyData = quarterlyAverage(forecastDates, forecastSeries);
+const chartData = makeChartData(forecastDates, forecastSeries);
+
+const chartLayout = {
+	autosize: true,
+	height: 560,
+	margin: {l: 64, r: 24, t: 24, b: 42},
+	paper_bgcolor: 'rgba(0,0,0,0)',
+	plot_bgcolor: 'rgba(0,0,0,0)',
+	font: {family: 'Georgia, serif', color: '#283b3d', size: 13},
+	hovermode: 'x unified',
+	legend: {orientation: 'h', x: 0, y: 1.12},
+	xaxis: {
+		type: 'date',
+		rangeslider: {visible: true, thickness: 0.11, bgcolor: '#eef3f1'},
+		rangeselector: {
+			buttons: [
+				{count: 1, label: '1y', step: 'year', stepmode: 'backward'},
+				{count: 5, label: '5y', step: 'year', stepmode: 'backward'},
+				{count: 10, label: '10y', step: 'year', stepmode: 'backward'},
+				{step: 'all', label: 'All'}
+			],
+			x: 1, xanchor: 'right', y: 1.12, yanchor: 'bottom'
+		},
+		gridcolor: '#e5ebe8',
+		linecolor: '#aebbb7'
+	},
+	yaxis: {
+		title: {text: 'GDP growth'},
+		gridcolor: '#e5ebe8',
+		zerolinecolor: '#aebbb7'
+	}
+};
+
+Plotly.newPlot('gdp-forecast-chart', chartData, chartLayout, {
+	responsive: true,
+	displaylogo: false,
+	modeBarButtonsToRemove: ['lasso2d', 'select2d']
+});
+
+document.querySelectorAll('[data-frequency]').forEach(button => {
+	button.addEventListener('click', () => {
+		const quarterly = button.dataset.frequency === 'quarterly';
+		const dates = quarterly ? quarterlyData.dates : forecastDates;
+		const values = quarterly ? quarterlyData.series : forecastSeries;
+
+		Plotly.react('gdp-forecast-chart', makeChartData(dates, values), chartLayout, {
+			responsive: true,
+			displaylogo: false,
+			modeBarButtonsToRemove: ['lasso2d', 'select2d']
+		});
+
+		document.querySelectorAll('[data-frequency]').forEach(toggle => {
+			const selected = toggle === button;
+			toggle.classList.toggle('active', selected);
+			toggle.setAttribute('aria-pressed', String(selected));
+		});
+	});
+});
+</script>
+""")
+```

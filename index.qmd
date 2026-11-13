@@ -1,0 +1,76 @@
+---
+title: "Boris Blagov"
+format:
+   html:
+        code-fold: true
+        echo: false
+        css: styles.css
+engine: julia
+about:
+  id: bio
+  template: trestles
+  image: resources/photo.jpg
+  image-alt: Boris Blagov
+  links:
+    - icon: envelope-at
+      text: Email
+      href: mailto:boris.blagov@rwi-essen.de 
+    - icon: github
+      text: Github
+      href: https://github.com/borisblagov 
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.de/citations?hl=en&user=p1biOaIAAAAJ
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/borisblagov/
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-2184-0717
+
+callout-appearance: minimal
+---
+
+:::{#bio}
+
+
+I am an economist and a professional forecaster for [RWI -- Leibniz Institute of Economic Research](http://en.rwi-essen.de/)  in Essen, Germany at the division [Macroeconomics and Public Finance](http://en.rwi-essen.de/forschung-und-beratung/wachstum-konjunktur-oeffentliche-finanzen/).
+
+I am part of the junior faculty of the [Ruhr Graduate School of Economics](http://rgs-econ.org/) and a research fellow of [DocMA](https://docma.tu-dortmund.de/team/research-fellows/) - an interdisciplinary research project in which algorithms process huge amounts of newspaper articles and texts of social media in order to recognize patterns.
+
+On this page you will find my [research](/#papers), [forecasts](/#forecasts), [replication codes](/#publications), and previous [teaching materials](#teaching).
+
+:::
+
+## Featured Post
+
+### [A new site with Quatro](posts/2026_11_13_new_site/)
+
+November 13, 2025 · A transition away from hugo academic/wowchemy/hugoblox
+
+Read about the move to Quarto and the reasons for choosing a more maintainable setup for the site.
+
+```{julia}
+#| echo: false
+include("common.jl");
+```
+
+## Current research
+```{julia}
+#| output: asis
+map(paper -> print_paper(paper, cvdata["presentations"], "caution", include_by_coauthor=true), cvdata["works-in-progress"]);
+```
+
+## Publications
+
+```{julia}
+#| output: asis
+map(paper -> print_paper(paper, cvdata["presentations"], "tip", include_by_coauthor=true), cvdata["publications"]);
+```
+
+## Working Papers
+
+```{julia}
+#| output: asis
+map(paper -> print_paper(paper, cvdata["presentations"], "note", include_by_coauthor=true), cvdata["working-papers"]);
+```

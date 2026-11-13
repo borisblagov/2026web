@@ -1,0 +1,12 @@
+{
+  "hash": "27a542e3d69d05c06acf7a08ed955e76",
+  "result": {
+    "engine": "julia",
+    "markdown": "---\ntitle: \"Data\"\nformat:\n  html:\n    toc: false\nengine: julia\n---\n\n## Bulgarian GDP nowcasts\n\n\n### Monthly Bulgarian GDP 2025 Q3\n\n",
+    "supporting": [
+      "data_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

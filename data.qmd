@@ -1,0 +1,12 @@
+---
+title: "Data"
+format:
+  html:
+    toc: false
+engine: julia
+---
+
+## Bulgarian GDP nowcasts
+
+
+### Monthly Bulgarian GDP 2025 Q3
