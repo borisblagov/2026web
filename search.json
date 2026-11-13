@@ -2,7 +2,7 @@
   {
     "objectID": "posts/2026_11_13_new_site/index.html",
     "href": "posts/2026_11_13_new_site/index.html",
-    "title": "A new site with Quatro",
+    "title": "A new site using Quatro",
     "section": "",
     "text": "A few years ago I visited an academic website with a wonderful design. It was built with hugo and with the “academic” theme of George Cushen. Shortly after I switched to that design and this was my website for the past at least five years.\nHowever, maintaining the website over time became extremely time consuming. As a researcher you update your website maybe every six, nine, or even twelve months. Every update in the beginning needed a new hugo version. Then, at some point the academic theme became wowchemy and had a list of breaking changes, which needed to be implementet incrementally for all new versions of hugo backwards. Then, the template became hugo blox and it was rewritten, meaning that some older styles were missing as they had to yet be implemented.\nThis sent me on a quest to find something more reliable and I have found Quatro. We will see how this goes, but there are some really nice websites around. This one draws its main inspiration from Vadim Elenev’s website, who also ahd his template on his github.\nWhat I really like of Quatro is that you can combine it with source code, e.g. Julia in my case, which has great Package Manager, so I hope, that if I have to update something later, I can just load the same packages that I loaded today."
   },
@@ -18,7 +18,7 @@
     "href": "blog.html",
     "title": "Posts",
     "section": "",
-    "text": "Historical time series for industrial production in the state of North Rhine-Westphalia\n\n\n\nData\n\n\n\n\nGenerating data for using in econometric modelling\n\n\n\n\n\n\nMay 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nA new site with Quatro\n\n\n\nBlogging\n\n\n\n\nA transition away from hugo academic/wowchemy/hugoblox\n\n\n\n\n\n\nNov 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBulgarian GDP nowcast 2025 Q3\n\n\n\nNowcasts\n\n\n\n\nMonthly estimates for Bulgarian GDP from a mixed-frequency VAR nowcast for 2025 Q3.\n\n\n\n\n\n\nSep 3, 2025\n\n\n\n\n\nNo matching items"
+    "text": "A new site using Quatro\n\n\n\nBlogging\n\n\n\n\nA transition away from hugo academic/wowchemy/hugoblox\n\n\n\n\n\n\nNov 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nHistorical time series for industrial production in the state of North Rhine-Westphalia\n\n\n\nData\n\n\n\n\nGenerating data for using in econometric modelling\n\n\n\n\n\n\nMay 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBulgarian GDP nowcast 2025 Q3\n\n\n\nNowcasts\n\n\n\n\nMonthly estimates for Bulgarian GDP from a mixed-frequency VAR nowcast for 2025 Q3.\n\n\n\n\n\n\nSep 3, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
