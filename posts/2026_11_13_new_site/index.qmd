@@ -1,9 +1,9 @@
 ---
-title: "A new site with Quatro"
+title: "A new site using Quatro"
 description: "A transition away from hugo academic/wowchemy/hugoblox"
 draft: false
 author: "Boris Blagov"
-date: "2025-11-13"
+date: "2026-11-13"
 categories: [Blogging]
 tags: [website]
 image: "image.png"
