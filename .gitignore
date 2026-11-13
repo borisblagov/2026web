@@ -1,2 +1,4 @@
 .quatro
 _site
+/.quarto/
+**/*.quarto_ipynb
