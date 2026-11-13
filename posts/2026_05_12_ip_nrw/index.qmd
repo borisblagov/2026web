@@ -9,9 +9,90 @@ tags: [nrw, dataset]
 image: "image.jpg"
 image-alt: "NRW industrial production"
 ---
-![NRW industrial production long time-series](image.jpg){width=800}
+```{julia}
+#| echo: false
+#| output: asis
+using Dates
 
+csv_path = joinpath(@__DIR__, "ipNRW_2026_05_vintage.csv")
+csv_rows = readlines(csv_path)
+csv_header = strip.(split(first(csv_rows), ';'))
+data_rows = split.(csv_rows[2:end], ';')
 
+dates = Date.(strip.(getindex.(data_rows, 1)), Ref(dateformat"dd/mm/yyyy"))
+series = [
+    parse.(Float64, replace.(strip.(getindex.(data_rows, column)), "," => "."))
+    for column in 2:length(csv_header)
+]
+series_names = csv_header[2:end]
+
+js_dates = "[" * join(
+    ("\"" * Dates.format(date, dateformat"yyyy-mm-dd") * "\"" for date in dates),
+    ",",
+) * "]"
+js_values = ["[" * join(string.(values), ",") * "]" for values in series]
+js_labels = "[" * join(
+    ("\"" * replace(name, "\\" => "\\\\", "\"" => "\\\"") * "\"" for name in series_names),
+    ",",
+) * "]"
+
+print("""
+<div id="ipnrw-chart" role="img" aria-label="Interactive line chart of the North Rhine-Westphalia industrial production index"></div>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+const ipnrwDates = $js_dates;
+const ipnrwSeries = [$(join(js_values, ","))];
+const ipnrwLabels = $js_labels;
+
+const chartData = ipnrwSeries.map((values, index) => ({
+    x: ipnrwDates,
+    y: values,
+    type: 'scatter',
+    mode: 'lines',
+    name: ipnrwLabels[index],
+    line: {width: 2},
+    hovertemplate: '%{y:.2f}<extra>%{fullData.name}</extra>'
+}));
+
+const chartLayout = {
+    autosize: true,
+    height: 560,
+    margin: {l: 64, r: 24, t: 24, b: 42},
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    font: {family: 'Georgia, serif', color: '#283b3d', size: 13},
+    hovermode: 'x unified',
+    legend: {orientation: 'h', x: 0, y: 1.12},
+    xaxis: {
+        type: 'date',
+        rangeslider: {visible: true, thickness: 0.11, bgcolor: '#eef3f1'},
+        rangeselector: {
+            buttons: [
+                {count: 1, label: '1y', step: 'year', stepmode: 'backward'},
+                {count: 5, label: '5y', step: 'year', stepmode: 'backward'},
+                {count: 10, label: '10y', step: 'year', stepmode: 'backward'},
+                {step: 'all', label: 'All'}
+            ],
+            x: 1, xanchor: 'right', y: 1.12, yanchor: 'bottom'
+        },
+        gridcolor: '#e5ebe8',
+        linecolor: '#aebbb7'
+    },
+    yaxis: {
+        title: {text: 'Industrial production index'},
+        gridcolor: '#e5ebe8',
+        zerolinecolor: '#aebbb7'
+    }
+};
+
+Plotly.newPlot('ipnrw-chart', chartData, chartLayout, {
+    responsive: true,
+    displaylogo: false,
+    modeBarButtonsToRemove: ['lasso2d', 'select2d']
+});
+</script>
+""")
+```
 
 The data office IT.NRW does not publish a long time series for industrial production for NRW. [See here at the Landesdatenbank IT.NRW](https://landesdatenbank.nrw.de/ldbnrw/online?operation=statistic&levelindex=0&levelid=1778586333691&code=42153#abreadcrumb)
 
@@ -58,4 +139,4 @@ When IT.NRW release a new index, they only update the latest base year data - da
 
 ## Download
 
-You can download the monthly Industrial Production NRW series ([are available in Excel format here](2026-05_42153_combined.xlsx). You can also see how they are caclulated in more detail. If you are interested in other details, do get in touch via [email](mailto:boris.blagov@rwi-essen.de).
+You can download the monthly Industrial Production NRW series [are available in Excel format here](2026-05_42153_combined.xlsx). You can also see how they are caclulated in more detail. If you are interested in other details, do get in touch via [email](mailto:boris.blagov@rwi-essen.de).
